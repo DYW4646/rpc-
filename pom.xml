@@ -18,6 +18,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <netty.version>4.1.86.Final</netty.version>
         <junit.version>4.13.2</junit.version>
+        <zookeeper.version>3.9.0</zookeeper.version>
     </properties>
 
     <dependencies></dependencies>
@@ -33,11 +34,26 @@
             <dependency>
                 <groupId>junit</groupId>
                 <artifactId>junit</artifactId>
-                <version>4.13.2</version>
+                <version>${junit.version}</version>
                 <scope>test</scope>
             </dependency>
-        </dependencies>
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
 
+        </dependencies>
+<!--@echo off
+rem 这里写你的仓库路径
+set REPOSITORY_PATH=D:\software\apache-maven-3.9.3\mvn_repo
+rem 正在搜索...
+for /f "delims=" %%i in ('dir /b /s "%REPOSITORY_PATH%\*lastUpdated*"') do (
+    del /s /q %%i
+)
+rem 搜索完毕
+pause
+-->
     </dependencyManagement>
 
 </project>
